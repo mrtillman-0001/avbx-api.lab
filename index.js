@@ -1,9 +1,9 @@
 window.onload = function(){
-  var client = new AvBxApiClient(token);
+  var client = new AvBxGravatarClient(token);
   
   client
   .getImages()
   .then(console.log)
-  .catch(console.log)
+  .catch(console.log);
 
 }
