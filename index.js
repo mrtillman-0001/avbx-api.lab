@@ -1,13 +1,9 @@
 window.onload = function(){
-  var url = 'https://api.avatarbox.io/rest.v1/gravatar/images'
-
-  fetch(url, {
-    method: 'GET',
-    headers: {
-      'Authorization': `Bearer ${token}`	
-    }
-  })
-  .then(res => res.json())
+  var client = new AvBxApiClient(token);
+  
+  client
+  .getImages()
   .then(console.log)
   .catch(console.log)
+
 }
