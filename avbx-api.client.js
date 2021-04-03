@@ -4,6 +4,13 @@ class AvBxApiClient {
       'Authorization': `Bearer ${token}`	
     };
     this.baseUri = 'https://api.avatarbox.io/rest.v1/';
+    //this.baseUri = 'http://localhost:8081/';
+  }
+  get isActive(){
+    return _get.call(this, 'isactive');
+  }
+  set isActive(value){
+    return value ? this.on() : this.off();
   }
   on(){
     return _toggle.call(this, 'on');
